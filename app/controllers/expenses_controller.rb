@@ -1,6 +1,6 @@
 class ExpensesController < ApplicationController
   def index
-    @expenses = Expense.all
+    @expenses = Expense.page(params[:page]).per(10)
 
     render("expense_templates/index.html.erb")
   end

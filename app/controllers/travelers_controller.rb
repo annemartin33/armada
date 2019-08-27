@@ -1,6 +1,6 @@
 class TravelersController < ApplicationController
   def index
-    @travelers = Traveler.all
+    @travelers = Traveler.page(params[:page]).per(10)
 
     render("traveler_templates/index.html.erb")
   end
