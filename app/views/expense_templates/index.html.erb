@@ -58,7 +58,11 @@
 
         <!-- Display expense.trip_id start -->
         <td>
-          <%= expense.trip.destination %>
+          <% if expense.trip.present? %>
+            <a href="/trips/<%= expense.trip.id %>">
+              <%= expense.trip.destination %>
+            </a>
+          <% end %>
         </td>
         <!-- Display expense.trip_id end -->
 

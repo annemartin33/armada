@@ -34,7 +34,11 @@
       </dt>
       <!-- Display trip_id start -->
       <dd>
-        <%= @expense.trip_id %>
+        <% if @expense.trip.present? %>
+          <a href="/trips/<%= @expense.trip_id %>">
+            <%= @expense.trip.destination %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display trip_id end -->
 

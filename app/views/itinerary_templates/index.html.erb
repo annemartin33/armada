@@ -74,7 +74,11 @@
 
         <!-- Display itinerary.traveler_id start -->
         <td>
-          <%= itinerary.traveler.email %>
+          <% if itinerary.traveler.present? %>
+            <a href="/travelers/<%= itinerary.traveler.id %>">
+              <%= itinerary.traveler.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display itinerary.traveler_id end -->
 
@@ -104,7 +108,11 @@
 
         <!-- Display itinerary.trip_id start -->
         <td>
-          <%= itinerary.trip.destination %>
+          <% if itinerary.trip.present? %>
+            <a href="/trips/<%= itinerary.trip.id %>">
+              <%= itinerary.trip.destination %>
+            </a>
+          <% end %>
         </td>
         <!-- Display itinerary.trip_id end -->
 

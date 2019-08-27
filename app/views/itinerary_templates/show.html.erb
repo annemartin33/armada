@@ -38,7 +38,11 @@
       </dt>
       <!-- Display traveler_id start -->
       <dd>
-        <%= @itinerary.traveler_id %>
+        <% if @itinerary.traveler.present? %>
+          <a href="/travelers/<%= @itinerary.traveler_id %>">
+            <%= @itinerary.traveler.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display traveler_id end -->
 
@@ -83,7 +87,11 @@
       </dt>
       <!-- Display trip_id start -->
       <dd>
-        <%= @itinerary.trip_id %>
+        <% if @itinerary.trip.present? %>
+          <a href="/trips/<%= @itinerary.trip_id %>">
+            <%= @itinerary.trip.destination %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display trip_id end -->
 
