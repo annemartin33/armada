@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Expense resource:
+
+  # CREATE
+  get("/expenses/new", { :controller => "expenses", :action => "new_form" })
+  post("/create_expense", { :controller => "expenses", :action => "create_row" })
+
+  # READ
+  get("/expenses", { :controller => "expenses", :action => "index" })
+  get("/expenses/:id_to_display", { :controller => "expenses", :action => "show" })
+
+  # UPDATE
+  get("/expenses/:prefill_with_id/edit", { :controller => "expenses", :action => "edit_form" })
+  post("/update_expense/:id_to_modify", { :controller => "expenses", :action => "update_row" })
+
+  # DELETE
+  get("/delete_expense/:id_to_remove", { :controller => "expenses", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Itinerary resource:
 
   # CREATE
