@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Itinerary resource:
+
+  # CREATE
+  get("/itineraries/new", { :controller => "itineraries", :action => "new_form" })
+  post("/create_itinerary", { :controller => "itineraries", :action => "create_row" })
+
+  # READ
+  get("/itineraries", { :controller => "itineraries", :action => "index" })
+  get("/itineraries/:id_to_display", { :controller => "itineraries", :action => "show" })
+
+  # UPDATE
+  get("/itineraries/:prefill_with_id/edit", { :controller => "itineraries", :action => "edit_form" })
+  post("/update_itinerary/:id_to_modify", { :controller => "itineraries", :action => "update_row" })
+
+  # DELETE
+  get("/delete_itinerary/:id_to_remove", { :controller => "itineraries", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Trip resource:
 
   # CREATE
