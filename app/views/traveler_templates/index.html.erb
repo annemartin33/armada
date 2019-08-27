@@ -10,13 +10,9 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -58,47 +54,33 @@
 
       <% @travelers.each do |traveler| %>
       <tr>
-        <!-- Display traveler.id start -->
         <td>
           <%= traveler.id %>
         </td>
-        <!-- Display traveler.id end -->
 
-        <!-- Display traveler.email start -->
         <td>
           <%= traveler.email %>
         </td>
-        <!-- Display traveler.email end -->
 
-        <!-- Display traveler.password start -->
         <td>
           <%= traveler.password %>
         </td>
-        <!-- Display traveler.password end -->
 
-        <!-- Display traveler.home_airport start -->
         <td>
           <%= traveler.home_airport %>
         </td>
-        <!-- Display traveler.home_airport end -->
 
-        <!-- Display traveler.username start -->
         <td>
           <%= traveler.username %>
         </td>
-        <!-- Display traveler.username end -->
 
-        <!-- Display traveler.created_at start -->
         <td>
           <%= time_ago_in_words(traveler.created_at) %> ago
         </td>
-        <!-- Display traveler.created_at end -->
 
-        <!-- Display traveler.updated_at start -->
         <td>
           <%= time_ago_in_words(traveler.updated_at) %> ago
         </td>
-        <!-- Display traveler.updated_at end -->
 
         <td>
           <a href="/travelers/<%= traveler.id %>">

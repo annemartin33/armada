@@ -4,45 +4,31 @@
 
 <hr>
 
-<!-- Form trip start -->
 <form action="/update_trip/<%= @trip.id %>" method="post">
-<!-- Form trip end -->
 
-  <!-- Label and input for destination start -->
   <div class="form-group">
     <label for="destination">
       Destination
     </label>
 
-    <!-- Input for destination start -->
     <input type="text" id="destination" name="destination" class="form-control" value="<%= @trip.destination %>">
-    <!-- Input for destination end -->
   </div>
-  <!-- Label and input for destination end -->
 
-  <!-- Label and input for trip_name start -->
   <div class="form-group">
     <label for="trip_name">
       Trip name
     </label>
 
-    <!-- Input for trip_name start -->
     <input type="text" id="trip_name" name="trip_name" class="form-control" value="<%= @trip.trip_name %>">
-    <!-- Input for trip_name end -->
   </div>
-  <!-- Label and input for trip_name end -->
 
-  <!-- Label and input for traveler_id start -->
   <div class="form-group">
     <label for="traveler_id">
       Traveler
     </label>
 
-    <!-- Input for traveler_id start -->
     <input type="text" id="traveler_id" name="traveler_id" class="form-control" value="<%= @trip.traveler_id %>">
-    <!-- Input for traveler_id end -->
   </div>
-  <!-- Label and input for traveler_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update trip

@@ -11,73 +11,58 @@
         </a>
       </div>
 
-      <!-- Edit link trip start -->
       <div class="col">
         <a href="/trips/<%= @trip.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit trip
         </a>
       </div>
-      <!-- Edit link trip end -->
 
-      <!-- Delete link trip start -->
       <div class="col">
         <a href="/delete_trip/<%= @trip.id %>" class="btn btn-block btn-outline-secondary">
           Delete trip
         </a>
       </div>
-      <!-- Delete link trip end -->
     </div>
 
     <dl>
       <dt>
         Destination
       </dt>
-      <!-- Display destination start -->
       <dd>
         <%= @trip.destination %>
       </dd>
-      <!-- Display destination end -->
 
       <dt>
         Trip name
       </dt>
-      <!-- Display trip_name start -->
       <dd>
         <%= @trip.trip_name %>
       </dd>
-      <!-- Display trip_name end -->
 
       <dt>
         Traveler
       </dt>
-      <!-- Display traveler_id start -->
       <dd>
         <%= @trip.traveler_id %>
       </dd>
-      <!-- Display traveler_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@trip.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@trip.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "trip_templates/trip_itineraries" %>
@@ -95,4 +80,3 @@
     <%= render partial: "trip_templates/trip_participants" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

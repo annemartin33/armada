@@ -5,33 +5,23 @@
 
 <hr>
 
-<!-- Form expense start -->
 <form action="/create_expense" method="post">
-<!-- Form expense end -->
 
-  <!-- Label and input for trip_id start -->
   <div class="form-group">
     <label for="trip_id">
       Trip
     </label>
 
-    <!-- Input for trip_id start -->
     <%= select_tag(:trip_id, options_from_collection_for_select(Trip.all, :id, :destination, @expense.trip_id), :class => "form-control") %>
-    <!-- Input for trip_id end -->
   </div>
-  <!-- Label and input for trip_id end -->
 
-  <!-- Label and input for expense_name start -->
   <div class="form-group">
     <label for="expense_name">
       Expense name
     </label>
 
-    <!-- Input for expense_name start -->
     <input type="text" id="expense_name" name="expense_name" class="form-control">
-    <!-- Input for expense_name end -->
   </div>
-  <!-- Label and input for expense_name end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create expense

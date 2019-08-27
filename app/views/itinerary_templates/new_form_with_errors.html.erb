@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @itinerary.present? %>
   <% if @itinerary.errors.any? %>
     <% @itinerary.errors.full_messages.each do |message| %>
@@ -16,75 +15,49 @@
 
 <hr>
 
-<!-- Form itinerary start -->
 <form action="/create_itinerary" method="post">
-<!-- Form itinerary end -->
 
-  <!-- Label and input for traveler_id start -->
-  <!-- Input for "traveler_id" start -->
   <input type="hidden" name="traveler_id" value="<%= current_traveler.id %>">
-  <!-- Input for "traveler_id" end -->
-  <!-- Label and input for traveler_id end -->
 
-  <!-- Label and input for arrival_flight start -->
   <div class="form-group">
     <label for="arrival_flight">
       Arrival flight
     </label>
 
-    <!-- Input for arrival_flight start -->
     <input type="text" id="arrival_flight" name="arrival_flight" class="form-control" value="<%= @itinerary.arrival_flight %>">
-    <!-- Input for arrival_flight end -->
   </div>
-  <!-- Label and input for arrival_flight end -->
 
-  <!-- Label and input for departure_flight start -->
   <div class="form-group">
     <label for="departure_flight">
       Departure flight
     </label>
 
-    <!-- Input for departure_flight start -->
     <input type="text" id="departure_flight" name="departure_flight" class="form-control" value="<%= @itinerary.departure_flight %>">
-    <!-- Input for departure_flight end -->
   </div>
-  <!-- Label and input for departure_flight end -->
 
-  <!-- Label and input for home_airport start -->
   <div class="form-group">
     <label for="home_airport">
       Home airport
     </label>
 
-    <!-- Input for home_airport start -->
     <input type="text" id="home_airport" name="home_airport" class="form-control" value="<%= @itinerary.home_airport %>">
-    <!-- Input for home_airport end -->
   </div>
-  <!-- Label and input for home_airport end -->
 
-  <!-- Label and input for destination start -->
   <div class="form-group">
     <label for="destination">
       Destination
     </label>
 
-    <!-- Input for destination start -->
     <input type="text" id="destination" name="destination" class="form-control" value="<%= @itinerary.destination %>">
-    <!-- Input for destination end -->
   </div>
-  <!-- Label and input for destination end -->
 
-  <!-- Label and input for trip_id start -->
   <div class="form-group">
     <label for="trip_id">
       Trip
     </label>
 
-    <!-- Input for trip_id start -->
     <%= select_tag(:trip_id, options_from_collection_for_select(Trip.all, :id, :destination, @itinerary.trip_id), :class => "form-control") %>
-    <!-- Input for trip_id end -->
   </div>
-  <!-- Label and input for trip_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create itinerary

@@ -6,11 +6,9 @@
   <ul class="list-group list-group-flush">
     <% @traveler.expenses.each do |expense| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/expenses/<%= expense.id %>">
           <%= expense.trip_id %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>
