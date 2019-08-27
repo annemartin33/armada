@@ -1,6 +1,7 @@
 class ExpensesController < ApplicationController
   def index
-    @expenses = Expense.page(params[:page]).per(10)
+    @q = Expense.ransack(params[:q])
+    @expenses = @q.result(:distinct => true).includes(:trip, :participant).page(params[:page]).per(10)
 
     render("expense_templates/index.html.erb")
   end
