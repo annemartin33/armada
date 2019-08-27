@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Participants
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @trip.participants.each do |traveler| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/travelers/<%= traveler.id %>">
+          <%= traveler.email %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

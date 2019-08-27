@@ -53,6 +53,14 @@ class ExpensesController < ApplicationController
     end
   end
 
+  def destroy_row_from_trip
+    @expense = Expense.find(params.fetch("id_to_remove"))
+
+    @expense.destroy
+
+    redirect_to("/trips/#{@expense.trip_id}", notice: "Expense deleted successfully.")
+  end
+
   def destroy_row
     @expense = Expense.find(params.fetch("id_to_remove"))
 

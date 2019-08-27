@@ -61,6 +61,22 @@ class ItinerariesController < ApplicationController
     end
   end
 
+  def destroy_row_from_traveler
+    @itinerary = Itinerary.find(params.fetch("id_to_remove"))
+
+    @itinerary.destroy
+
+    redirect_to("/travelers/#{@itinerary.traveler_id}", notice: "Itinerary deleted successfully.")
+  end
+
+  def destroy_row_from_trip
+    @itinerary = Itinerary.find(params.fetch("id_to_remove"))
+
+    @itinerary.destroy
+
+    redirect_to("/trips/#{@itinerary.trip_id}", notice: "Itinerary deleted successfully.")
+  end
+
   def destroy_row
     @itinerary = Itinerary.find(params.fetch("id_to_remove"))
 
