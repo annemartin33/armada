@@ -36,6 +36,25 @@ class ItinerariesController < ApplicationController
     end
   end
 
+  def create_row_from_trip
+    @itinerary = Itinerary.new
+
+    @itinerary.traveler_id = params.fetch("traveler_id")
+    @itinerary.arrival_flight = params.fetch("arrival_flight")
+    @itinerary.departure_flight = params.fetch("departure_flight")
+    @itinerary.home_airport = params.fetch("home_airport")
+    @itinerary.destination = params.fetch("destination")
+    @itinerary.trip_id = params.fetch("trip_id")
+
+    if @itinerary.valid?
+      @itinerary.save
+
+      redirect_to("/trips/#{@itinerary.trip_id}", notice: "Itinerary created successfully.")
+    else
+      render("itinerary_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @itinerary = Itinerary.find(params.fetch("prefill_with_id"))
 

@@ -1,0 +1,25 @@
+<!-- Form expense start -->
+<form action="/create_expense_from_trip" method="post">
+<!-- Form expense end -->
+
+  <!-- Label and input for trip_id start -->
+  <!-- Input for trip_id start -->
+  <input type="hidden" name="trip_id" value="<%= @trip.id %>">
+  <!-- Input for trip_id end -->
+
+  <!-- Label and input for expense_name start -->
+  <div class="form-group">
+    <label for="expense_name">
+      Expense name
+    </label>
+
+    <!-- Input for expense_name start -->
+    <input type="text" id="expense_name" name="expense_name" class="form-control" value="<%= @expense.expense_name %>">
+    <!-- Input for expense_name end -->
+  </div>
+  <!-- Label and input for expense_name end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create expense
+  </button>
+</form>

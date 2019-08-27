@@ -32,6 +32,21 @@ class ExpensesController < ApplicationController
     end
   end
 
+  def create_row_from_trip
+    @expense = Expense.new
+
+    @expense.trip_id = params.fetch("trip_id")
+    @expense.expense_name = params.fetch("expense_name")
+
+    if @expense.valid?
+      @expense.save
+
+      redirect_to("/trips/#{@expense.trip_id}", notice: "Expense created successfully.")
+    else
+      render("expense_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @expense = Expense.find(params.fetch("prefill_with_id"))
 
