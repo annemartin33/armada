@@ -1,0 +1,84 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Traveler #<%= @traveler.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/travelers" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link traveler start -->
+      <div class="col">
+        <a href="/travelers/<%= @traveler.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit traveler
+        </a>
+      </div>
+      <!-- Edit link traveler end -->
+
+    </div>
+
+    <dl>
+      <dt>
+        Email
+      </dt>
+      <!-- Display email start -->
+      <dd>
+        <%= @traveler.email %>
+      </dd>
+      <!-- Display email end -->
+
+      <dt>
+        Password
+      </dt>
+      <!-- Display password start -->
+      <dd>
+        <%= @traveler.password %>
+      </dd>
+      <!-- Display password end -->
+
+      <dt>
+        Home airport
+      </dt>
+      <!-- Display home_airport start -->
+      <dd>
+        <%= @traveler.home_airport %>
+      </dd>
+      <!-- Display home_airport end -->
+
+      <dt>
+        Username
+      </dt>
+      <!-- Display username start -->
+      <dd>
+        <%= @traveler.username %>
+      </dd>
+      <!-- Display username end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@traveler.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@traveler.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
