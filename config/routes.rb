@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "trips#index"
   # Routes for the Expense resource:
 
   # CREATE
