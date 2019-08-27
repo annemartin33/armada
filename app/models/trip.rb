@@ -8,6 +8,10 @@ class Trip < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :participant_itineraries,
+             :through => :participants,
+             :source => :itineraries
+
   # Validations
 
 end

@@ -9,6 +9,10 @@ class Itinerary < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :trip_destination,
+             :through => :traveler,
+             :source => :trips
+
   # Validations
 
 end

@@ -12,6 +12,8 @@ RSpec.describe Trip, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:participant_itineraries) }
+
     end
 
     describe "Validations" do

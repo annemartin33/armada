@@ -12,6 +12,8 @@ RSpec.describe Itinerary, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_one(:trip_destination) }
+
     end
 
     describe "Validations" do
