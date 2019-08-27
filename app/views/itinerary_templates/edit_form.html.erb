@@ -9,15 +9,6 @@
 <!-- Form itinerary end -->
 
   <!-- Label and input for traveler_id start -->
-  <div class="form-group">
-    <label for="traveler_id">
-      Traveler
-    </label>
-
-    <!-- Input for traveler_id start -->
-    <%= select_tag(:traveler_id, options_from_collection_for_select(Traveler.all, :id, :email, @itinerary.traveler_id), :class => "form-control") %>
-    <!-- Input for traveler_id end -->
-  </div>
   <!-- Label and input for traveler_id end -->
 
   <!-- Label and input for arrival_flight start -->

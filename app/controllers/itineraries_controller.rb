@@ -64,7 +64,7 @@ class ItinerariesController < ApplicationController
   def update_row
     @itinerary = Itinerary.find(params.fetch("id_to_modify"))
 
-    @itinerary.traveler_id = params.fetch("traveler_id")
+    
     @itinerary.arrival_flight = params.fetch("arrival_flight")
     @itinerary.departure_flight = params.fetch("departure_flight")
     @itinerary.home_airport = params.fetch("home_airport")
