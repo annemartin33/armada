@@ -1,4 +1,6 @@
 ActiveAdmin.register Itinerary do
+
+ permit_params :traveler_id, :arrival_flight, :departure_flight, :home_airport, :destination, :trip_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
