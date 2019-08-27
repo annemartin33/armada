@@ -6,6 +6,10 @@ class Traveler < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :trips,
+             :through => :itineraries,
+             :source => :trip
+
   has_many   :expenses,
              :through => :trips,
              :source => :expenses

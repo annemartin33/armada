@@ -8,6 +8,10 @@ class Trip < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :participants,
+             :through => :itineraries,
+             :source => :traveler
+
   has_many   :participant_itineraries,
              :through => :participants,
              :source => :itineraries
