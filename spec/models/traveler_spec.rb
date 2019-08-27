@@ -10,6 +10,8 @@ RSpec.describe Traveler, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:expenses) }
+
     end
 
     describe "Validations" do

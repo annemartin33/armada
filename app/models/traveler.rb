@@ -6,6 +6,10 @@ class Traveler < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :expenses,
+             :through => :trips,
+             :source => :expenses
+
   # Validations
 
   # Include default devise modules. Others available are:

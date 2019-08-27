@@ -6,6 +6,10 @@ class Expense < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :participant,
+             :through => :trip,
+             :source => :participants
+
   # Validations
 
 end
