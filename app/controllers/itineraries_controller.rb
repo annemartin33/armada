@@ -1,4 +1,14 @@
 class ItinerariesController < ApplicationController
+  before_action :current_traveler_must_be_itinerary_traveler, :only => [:edit_form, :update_row, :destroy_row]
+
+  def current_traveler_must_be_itinerary_traveler
+    itinerary = Itinerary.find(params["id_to_display"] || params["prefill_with_id"] || params["id_to_modify"] || params["id_to_remove"])
+
+    unless current_traveler == itinerary.traveler
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @itineraries = Itinerary.all
 

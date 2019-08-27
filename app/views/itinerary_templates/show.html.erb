@@ -13,17 +13,21 @@
 
       <!-- Edit link itinerary start -->
       <div class="col">
-        <a href="/itineraries/<%= @itinerary.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit itinerary
-        </a>
+        <% if current_traveler == @itinerary.traveler %>
+          <a href="/itineraries/<%= @itinerary.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit itinerary
+          </a>
+        <% end %>
       </div>
       <!-- Edit link itinerary end -->
 
       <!-- Delete link itinerary start -->
       <div class="col">
-        <a href="/delete_itinerary/<%= @itinerary.id %>" class="btn btn-block btn-outline-secondary">
-          Delete itinerary
-        </a>
+        <% if current_traveler == @itinerary.traveler %>
+          <a href="/delete_itinerary/<%= @itinerary.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete itinerary
+          </a>
+        <% end %>
       </div>
       <!-- Delete link itinerary end -->
     </div>
